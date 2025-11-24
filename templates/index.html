@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>智能主动服务推荐系统</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body { background-color: #f5f7fa; }
+        .sidebar { height: 92vh; overflow-y: auto; }
+        .result-card { margin-bottom: 12px; padding: 12px; border-radius: 8px; }
+        .good { background-color: #d4edda; border-left: 6px solid #28a745; }
+        .bad { background-color: #f8d7da; border-left: 6px solid #dc3545; }
+        .product-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 15px;
+            background: white;
+        }
+        .product-card:hover {
+            box-shadow: 0px 0px 6px rgba(0,0,0,0.12);
+        }
+        .scroll-box {
+    max-height: 350px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+        .scroll-box-large {
+    max-height: 450px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+        .copy-box {
+            background: #fff8e1;
+            border-left: 4px solid #ffc107;
+            padding: 10px;
+            margin-top: 8px;
+            border-radius: 6px;
+        }
+        .loading-dot {
+            animation: blink 1.4s infinite both;
+        }
+        @keyframes blink {
+            0% { opacity: .2; }
+            20% { opacity: 1; }
+            100% { opacity: .2; }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- 顶部导航 -->
+<nav class="navbar navbar-dark bg-primary mb-3">
+    <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">📦 京东主站主动服务智能推荐 · 可视化 DEMO</span>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+
+        <!-- 左栏：用户选择 + 画像 -->
+        <div class="col-3 sidebar">
+            <h4 class="mb-3">👤 用户选择</h4>
+
+            <div class="card mb-3">
+                <div class="card-body">
+                    <label class="form-label">请选择用户：</label>
+                    <select id="userSelect" class="form-select" onchange="loadUserProfile()">
+                        {% for u in users %}
+                            <option value="{{u.user_id}}">{{u.user_id}} - {{u.user_type}}</option>
+                        {% endfor %}
+                    </select>
+
+                    <button class="btn btn-success w-100 mt-3" onclick="startFiltering()">⚡ 开始实时过滤</button>
+                </div>
+            </div>
+
+            <h5>用户画像</h5>
+            <div id="userProfile" class="text-muted mb-3">
+                请选择用户查看画像...
+            </div>
+        </div>
+
+
+
+
+
+        <!-- 中栏：商品池 + 流式过滤 -->
+        <div class="col-5">
+
+            <!-- 商品池展示（加入滑窗） -->
+            <div class="card mb-3 p-2">
+                <h5>📦 商品池（待过滤）</h5>
+                <div class="scroll-box">
+                    <div class="row">
+                        {% for p in products %}
+                            <div class="col-6 mb-2">
+                                <div class="border rounded p-2 bg-white">
+                                    <b>{{p.name}}</b><br>
+                                    <small>{{p.category}} | ¥{{p.price}}</small>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- 实时过滤结果（加入滑窗） -->
+            <h4>🔍 商品实时过滤</h4>
+            <div class="progress mb-2" style="height: 20px;">
+                <div id="progressBar" class="progress-bar" role="progressbar"
+                     style="width: 0%">0%</div>
+            </div>
+
+            <div class="scroll-box-large" id="filterStreamArea">
+                <p class="text-muted">点击左侧按钮开始实时过滤。</p>
+            </div>
+
+        </div>
+
+
+
+
+
+        <!-- 右栏：可推荐商品（卡片形式） -->
+        <div class="col-4 sidebar">
+            <h4>💚 可推荐商品</h4>
+            <div id="recommendArea">
+                <p class="text-muted">过滤后自动出现在这里。</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- JS -->
+<script>
+let totalProducts = {{ products | length }};
+let finishedCount = 0;
+
+
+// =====================
+// ① 用户画像加载
+// =====================
+function loadUserProfile() {
+    let userId = document.getElementById("userSelect").value;
+
+    fetch("/get_user_profile?user_id=" + userId)
+    .then(r => r.json())
+    .then(user => {
+        document.getElementById("userProfile").innerHTML = `
+            <div class="card p-2">
+                <b>ID:</b> ${user.user_id}<br>
+                <b>类型:</b> ${user.user_type}<br>
+                <b>年龄:</b> ${user.age}<br>
+                <b>性别:</b> ${user.gender}<br>
+                <b>价格带:</b> ${user.price_range}<br>
+
+                <hr>
+                <b>搜索历史:</b>
+                <ul>${user.search_history.map(x => `<li>${x}</li>`).join("")}</ul>
+
+                <b>浏览历史:</b>
+                <ul>${user.view_history.map(x => `<li>${x.name} (${x.price})</li>`).join("")}</ul>
+
+                <b>加购历史:</b>
+                <ul>${user.cart_history.map(x => `<li>${x.name} (${x.price})</li>`).join("")}</ul>
+
+                <b>购买历史:</b>
+                <ul>${user.purchase_history.map(x => `<li>${x.name} (${x.price})</li>`).join("")}</ul>
+            </div>
+        `;
+    })
+}
+
+
+// =====================
+// ② 开始流式过滤
+// =====================
+function startFiltering() {
+    let userId = document.getElementById("userSelect").value;
+
+    document.getElementById("filterStreamArea").innerHTML =
+        "<p class='text-info'>正在调用模型进行过滤...</p>";
+
+    document.getElementById("recommendArea").innerHTML = "";
+
+    finishedCount = 0;
+    updateProgress();
+
+    let source = new EventSource("/filter_stream?user_id=" + userId);
+
+    source.addEventListener("start", (e) => {
+        document.getElementById("filterStreamArea").innerHTML = "";
+    });
+
+    source.addEventListener("update", (e) => {
+        let data = JSON.parse(e.data);
+        finishedCount++;
+        updateProgress();
+
+        appendFilterResult(data);
+
+        if (data.result === "可推荐") {
+            appendRecommendCard(data);
+        }
+    });
+
+    source.addEventListener("done", (e) => {
+        source.close();
+    });
+}
+
+
+// =====================
+// ③ 进度条
+// =====================
+function updateProgress() {
+    let p = Math.floor((finishedCount / totalProducts) * 100);
+    let bar = document.getElementById("progressBar");
+    bar.style.width = p + "%";
+    bar.textContent = p + "%";
+}
+
+
+// =====================
+// ④ 中栏输出过滤结果
+// =====================
+function appendFilterResult(data) {
+    let area = document.getElementById("filterStreamArea");
+
+    let html = `
+        <div class="result-card ${data.result === "可推荐" ? "good" : "bad"}">
+            <b>${data.product.name}</b><br>
+            ${data.result}<br>
+            <small>${data.reason}</small>
+        </div>
+    `;
+    area.innerHTML += html;
+}
+
+
+// =====================
+// ⑤ 右栏：可推荐商品卡片
+// =====================
+function appendRecommendCard(data) {
+    let area = document.getElementById("recommendArea");
+
+    let html = `
+        <div class="product-card" id="card_${data.product.product_id}">
+            <h5>${data.product.name}</h5>
+            <p class="text-muted">${data.product.category} | ¥${data.product.price}</p>
+            <button class="btn btn-warning btn-sm"
+                onclick="startCopywriting('${data.product.product_id}')">
+                ✨ 生成推荐话术
+            </button>
+            <div id="copy_${data.product.product_id}" class="copy-box mt-2" style="display:none;"></div>
+        </div>
+    `;
+    area.innerHTML += html;
+}
+
+
+// =====================
+// ⑥ 单商品流式推荐话术
+// =====================
+function startCopywriting(productId) {
+    let userId = document.getElementById("userSelect").value;
+
+    let box = document.getElementById("copy_" + productId);
+    box.style.display = "block";
+    box.innerHTML = "<span class='loading-dot'>生成中...</span>";
+
+    let source = new EventSource(
+        `/copywriting_stream?user_id=${userId}&product_id=${productId}`
+    );
+
+    source.addEventListener("update", (e) => {
+        let data = JSON.parse(e.data);
+        box.innerHTML = data.text;
+    });
+
+    source.addEventListener("done", () => {
+        source.close();
+    });
+}
+</script>
+
+
+</body>
+</html>
