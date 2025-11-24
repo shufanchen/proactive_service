@@ -1,0 +1,243 @@
+[
+    {
+    "user_id": "A1_U001",
+    "user_type": "A1",
+    "age": 15,
+    "gender": "M",
+    "price_range": [30, 120],
+    "blocked_list": ["酒类"],
+  
+    "search_history": [
+      "蓝牙耳机",
+      "青少年篮球鞋",
+      "机械键盘",
+      "护眼台灯",
+      "学习平板"
+    ],
+  
+    "view_history": [
+      {"name": "小米蓝牙耳机 Youth 版", "category": "耳机", "price": 129},
+      {"name": "Nike 青少年篮球鞋", "category": "运动鞋", "price": 299},
+      {"name": "明基护眼台灯 Lite", "category": "台灯", "price": 199},
+      {"name": "罗技 K835 机械键盘", "category": "键盘", "price": 289},
+      {"name": "华为 MatePad SE 学习版", "category": "平板电脑", "price": 899}
+    ],
+  
+    "cart_history": [
+      {"name": "得力文具套装 12 件套", "category": "学习用品", "price": 25},
+      {"name": "雷蛇 Speed鼠标垫", "category": "外设配件", "price": 39},
+      {"name": "361° 青少年篮球短裤", "category": "运动服饰", "price": 59},
+      {"name": "小熊迷你台式风扇", "category": "小家电", "price": 49},
+      {"name": "Ubras 中性运动袜 3 双", "category": "服饰配件", "price": 29}
+    ],
+  
+    "purchase_history": [
+      {"name": "护眼桌面 LED 学习灯", "category": "学习用品", "price": 89, "date": "2024-10-21"},
+      {"name": "安德斯特电竞鼠标 A10", "category": "鼠标", "price": 59, "date": "2024-09-12"},
+      {"name": "李宁青少年训练背心", "category": "运动服饰", "price": 69, "date": "2024-08-05"},
+      {"name": "A4 复印纸 500 张", "category": "办公/学习", "price": 32, "date": "2024-07-19"},
+      {"name": "小米移动电源 Youth 版", "category": "移动电源", "price": 79, "date": "2024-06-03"}
+    ]
+  },
+  {
+    "user_id": "B1_U001",
+    "user_type": "B1",
+    "age": 27,
+    "gender": "M",
+    "price_range": [100, 500],
+    "blocked_list": [],
+  
+    "search_history": [
+      "机械键盘",
+      "男士运动跑鞋",
+      "降噪耳机",
+      "电竞显示器",
+      "运动手表"
+    ],
+  
+    "view_history": [
+      {"name": "罗技 G Pro X 机械键盘", "category": "键盘", "price": 799},
+      {"name": "索尼 WH-CH720N 降噪耳机", "category": "耳机", "price": 699},
+      {"name": "耐克 Air Zoom 男款跑鞋", "category": "运动鞋", "price": 499},
+      {"name": "华硕 24寸 电竞显示器", "category": "显示器", "price": 899},
+      {"name": "华为 WATCH GT 运动版", "category": "智能手表", "price": 999}
+    ],
+  
+    "cart_history": [
+      {"name": "李宁运动短裤 男款", "category": "运动服饰", "price": 129},
+      {"name": "雷蛇大号鼠标垫", "category": "外设配件", "price": 69},
+      {"name": "Anker USB-C 数据线 1m", "category": "数码配件", "price": 39},
+      {"name": "能量饮料 RedBull 6罐装", "category": "饮料", "price": 29},
+      {"name": "小米速干运动毛巾", "category": "运动用品", "price": 49}
+    ],
+  
+    "purchase_history": [
+      {"name": "小米蓝牙音箱 Mini", "category": "音箱", "price": 129, "date": "2024-09-28"},
+      {"name": "李宁男子训练 T 恤", "category": "运动服饰", "price": 89, "date": "2024-08-12"},
+      {"name": "罗技 G402 游戏鼠标", "category": "鼠标", "price": 199, "date": "2024-07-22"},
+      {"name": "安踏运动袜 5 双装", "category": "服饰配件", "price": 39, "date": "2024-06-15"},
+      {"name": "华为 FreeBuds SE 耳机", "category": "耳机", "price": 189, "date": "2024-05-07"}
+    ]
+  },
+  {
+    "user_id": "B2_U001",
+    "user_type": "B2",
+    "age": 24,
+    "gender": "F",
+    "price_range": [80, 400],
+    "blocked_list": [],
+  
+    "search_history": [
+      "防晒霜",
+      "女士运动鞋",
+      "小型吹风机",
+      "轻薄口红",
+      "少女包包"
+    ],
+  
+    "view_history": [
+      {"name": "安耐晒 金瓶防晒乳", "category": "美妆护肤", "price": 199},
+      {"name": "阿迪达斯 女款跑步鞋", "category": "运动鞋", "price": 469},
+      {"name": "戴森 Supersonic 吹风机", "category": "小家电", "price": 2990},
+      {"name": "完美日记 小细跟口红", "category": "彩妆", "price": 89},
+      {"name": "CHARLES & KEITH 女士单肩包", "category": "包包", "price": 399}
+    ],
+  
+    "cart_history": [
+      {"name": "蕉内 云感文胸", "category": "内衣", "price": 129},
+      {"name": "innisfree 保湿面霜", "category": "美妆护肤", "price": 139},
+      {"name": "优衣库 女士防晒外套", "category": "服饰", "price": 199},
+      {"name": "可悠然 沐浴露", "category": "个护家清", "price": 58},
+      {"name": "小米便携化妆镜", "category": "生活用品", "price": 79}
+    ],
+  
+    "purchase_history": [
+      {"name": "兰芝 夜间修护睡眠面膜", "category": "美妆护肤", "price": 189, "date": "2024-10-02"},
+      {"name": "H&M 女士针织上衣", "category": "服饰", "price": 129, "date": "2024-09-16"},
+      {"name": "小熊 多功能电热杯", "category": "小家电", "price": 119, "date": "2024-08-03"},
+      {"name": "ZARA 女士休闲包", "category": "包包", "price": 259, "date": "2024-07-11"},
+      {"name": "资生堂 洗颜专科洁面乳", "category": "美妆护肤", "price": 39, "date": "2024-06-07"}
+    ]
+  },
+  {
+    "user_id": "C1_U001",
+    "user_type": "C1",
+    "age": 38,
+    "gender": "M",
+    "price_range": [100, 800],
+    "blocked_list": [],
+  
+    "search_history": [
+      "空气炸锅",
+      "办公椅",
+      "剃须刀",
+      "扫地机器人",
+      "男士休闲皮鞋"
+    ],
+  
+    "view_history": [
+      {"name": "美的 4L 空气炸锅", "category": "厨房小家电", "price": 399},
+      {"name": "西昊 人体工学办公椅", "category": "家具", "price": 699},
+      {"name": "飞利浦 三刀头电动剃须刀", "category": "个护电器", "price": 359},
+      {"name": "石头 掃地机器人 E5", "category": "清洁家电", "price": 899},
+      {"name": "意尔康 男士皮鞋", "category": "鞋靴", "price": 269}
+    ],
+  
+    "cart_history": [
+      {"name": "得力 办公桌收纳盒", "category": "办公用品", "price": 49},
+      {"name": "南极人 男士短袖 2件装", "category": "服饰", "price": 79},
+      {"name": "九阳 电热水壶", "category": "厨房小家电", "price": 129},
+      {"name": "小米 WiFi6 路由器", "category": "网络设备", "price": 229},
+      {"name": "海绵拖把套装", "category": "家居清洁", "price": 59}
+    ],
+  
+    "purchase_history": [
+      {"name": "联想 办公鼠标", "category": "办公设备", "price": 59, "date": "2024-10-13"},
+      {"name": "七匹狼 男士腰带", "category": "服饰配件", "price": 119, "date": "2024-09-08"},
+      {"name": "海尔 吸尘器 Lite", "category": "清洁家电", "price": 499, "date": "2024-08-21"},
+      {"name": "阿迪达斯 男士跑步鞋", "category": "运动鞋", "price": 429, "date": "2024-07-14"},
+      {"name": "心相印 抽纸 24包", "category": "家清用品", "price": 39, "date": "2024-06-03"}
+    ]
+  },
+  {
+    "user_id": "D1_U001",
+    "user_type": "D1",
+    "age": 32,
+    "gender": "F",
+    "price_range": [800, 5000],
+    "blocked_list": [],
+  
+    "search_history": [
+      "折叠屏手机",
+      "高端护肤套装",
+      "扫拖一体机器人",
+      "品牌轻奢女包",
+      "智能门锁"
+    ],
+  
+    "view_history": [
+      {"name": "华为 Mate X5 折叠屏手机", "category": "手机", "price": 10999},
+      {"name": "SK-II 护肤精华套装", "category": "美妆护肤", "price": 2580},
+      {"name": "科沃斯 扫拖一体旗舰款", "category": "清洁家电", "price": 4299},
+      {"name": "COACH 女士单肩包", "category": "包包", "price": 2390},
+      {"name": "鹿客 智能指纹锁 Pro", "category": "智能家居", "price": 1899}
+    ],
+  
+    "cart_history": [
+      {"name": "戴森 V12 无绳吸尘器", "category": "清洁家电", "price": 3990},
+      {"name": "苹果 iPad Pro 11寸", "category": "平板电脑", "price": 6299},
+      {"name": "MONCLER 羽绒服 女款", "category": "服饰", "price": 7999},
+      {"name": "BOSE 降噪耳机 700", "category": "耳机", "price": 2899},
+      {"name": "松下 负离子电吹风机 高端款", "category": "个护电器", "price": 1299}
+    ],
+  
+    "purchase_history": [
+      {"name": "苹果 iPhone 15 Pro", "category": "手机", "price": 8999, "date": "2024-10-08"},
+      {"name": "戴森 Supersonic 吹风机", "category": "个护电器", "price": 2990, "date": "2024-09-15"},
+      {"name": "戴森 空气净化风扇", "category": "生活电器", "price": 4590, "date": "2024-08-03"},
+      {"name": "GUCCI 小号钱包", "category": "配饰", "price": 3590, "date": "2024-06-27"},
+      {"name": "SONY 家庭影院音响套装", "category": "音响设备", "price": 5199, "date": "2024-05-11"}
+    ]
+  },
+  {
+    "user_id": "E1_U001",
+    "user_type": "E1",
+    "age": 42,
+    "gender": "M",
+    "price_range": [10, 80],
+    "blocked_list": [],
+  
+    "search_history": [
+      "便宜的洗发水",
+      "实惠牙刷套装",
+      "经济型电水壶",
+      "折扣运动鞋",
+      "厨房抹布"
+    ],
+  
+    "view_history": [
+      {"name": "清扬 去屑洗发水 200ml", "category": "个护家清", "price": 29},
+      {"name": "双11特价运动鞋 男款", "category": "鞋靴", "price": 69},
+      {"name": "苏泊尔 1.2L 电水壶", "category": "小家电", "price": 59},
+      {"name": "妙洁 厨房抹布 5片装", "category": "家居清洁", "price": 12},
+      {"name": "黑人牙刷 4支装", "category": "个护用品", "price": 19}
+    ],
+  
+    "cart_history": [
+      {"name": "清风 抽纸 12包 家庭装", "category": "家清用品", "price": 16},
+      {"name": "奥妙 洗衣液 1kg", "category": "家清用品", "price": 29},
+      {"name": "便携式手电筒", "category": "工具", "price": 25},
+      {"name": "沙宣 男士洗发水 小瓶", "category": "个护家清", "price": 22},
+      {"name": "电池 7号 10只装", "category": "日用百货", "price": 9}
+    ],
+  
+    "purchase_history": [
+      {"name": "舒肤佳 沐浴露 720ml", "category": "个护家清", "price": 19, "date": "2024-10-19"},
+      {"name": "惠寻 抽纸 18包", "category": "家清用品", "price": 23, "date": "2024-08-22"},
+      {"name": "便携式小风扇", "category": "小家电", "price": 29, "date": "2024-07-14"},
+      {"name": "金针菇 300g", "category": "食品生鲜", "price": 6,  "date": "2024-06-29"},
+      {"name": "螺蛳粉 3袋装", "category": "食品速食", "price": 15, "date": "2024-05-03"}
+    ]
+  }
+]
+  

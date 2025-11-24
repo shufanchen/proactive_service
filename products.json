@@ -1,0 +1,168 @@
+[
+  {
+    "product_id": "P001",
+    "name": "小米蓝牙耳机 Youth 版",
+    "category": "耳机",
+    "brand": "小米",
+    "price": 129,
+    "stock": 500
+  },
+  {
+    "product_id": "P002",
+    "name": "耐克 青少年篮球鞋",
+    "category": "运动鞋",
+    "brand": "Nike",
+    "price": 299,
+    "stock": 120
+  },
+  {
+    "product_id": "P003",
+    "name": "得力 文具套装 12 件",
+    "category": "学习用品",
+    "brand": "得力",
+    "price": 25,
+    "stock": 1000
+  },
+
+  {
+    "product_id": "P004",
+    "name": "杜蕾斯 避孕套 12只",
+    "category": "成人用品",
+    "brand": "杜蕾斯",
+    "price": 59,
+    "stock": 150
+  },
+  {
+    "product_id": "P005",
+    "name": "RIO 微醺 鸡尾酒 330ml",
+    "category": "酒类",
+    "brand": "RIO",
+    "price": 12,
+    "stock": 300
+  },
+  {
+    "product_id": "P006",
+    "name": "情趣跳蛋",
+    "category": "成人用品",
+    "brand": "未知",
+    "price": 79,
+    "stock": 80
+  },
+
+  {
+    "product_id": "P007",
+    "name": "Ubras 女士无钢圈文胸",
+    "category": "内衣",
+    "brand": "Ubras",
+    "price": 129,
+    "stock": 250
+  },
+  {
+    "product_id": "P008",
+    "name": "杰克琼斯 男士平角内裤 3条装",
+    "category": "男士内裤",
+    "brand": "JackJones",
+    "price": 89,
+    "stock": 300
+  },
+  {
+    "product_id": "P009",
+    "name": "ABC 卫生巾 18片",
+    "category": "卫生巾",
+    "brand": "ABC",
+    "price": 29,
+    "stock": 500
+  },
+
+  {
+    "product_id": "P010",
+    "name": "索尼 WH-1000XM5 降噪耳机",
+    "category": "耳机",
+    "brand": "SONY",
+    "price": 2999,
+    "stock": 99
+  },
+  {
+    "product_id": "P011",
+    "name": "苹果 iPhone 15 Pro",
+    "category": "手机",
+    "brand": "Apple",
+    "price": 8999,
+    "stock": 80
+  },
+  {
+    "product_id": "P012",
+    "name": "大疆 Mavic Air 无人机",
+    "category": "无人机",
+    "brand": "DJI",
+    "price": 5299,
+    "stock": 42
+  },
+
+  {
+    "product_id": "P013",
+    "name": "海尔 全自动洗衣机 10kg",
+    "category": "洗衣机",
+    "brand": "海尔",
+    "price": 3299,
+    "stock": 0
+  },
+  {
+    "product_id": "P014",
+    "name": "格力 1.5匹 壁挂式空调",
+    "category": "空调",
+    "brand": "格力",
+    "price": 4099,
+    "stock": 0
+  },
+
+  {
+    "product_id": "P015",
+    "name": "TCL 55寸 4K 电视",
+    "category": "电视",
+    "brand": "TCL",
+    "price": 2199,
+    "stock": 300
+  },
+  {
+    "product_id": "P016",
+    "name": "联想 拯救者 游戏本 R9000P",
+    "category": "笔记本电脑",
+    "brand": "Lenovo",
+    "price": 7499,
+    "stock": 90
+  },
+  {
+    "product_id": "P017",
+    "name": "美的 智能冰箱 450L",
+    "category": "冰箱",
+    "brand": "美的",
+    "price": 3899,
+    "stock": 200
+  },
+
+  {
+    "product_id": "P018",
+    "name": "妙洁 厨房抹布 5片装",
+    "category": "家清用品",
+    "brand": "妙洁",
+    "price": 12,
+    "stock": 800
+  },
+  {
+    "product_id": "P019",
+    "name": "惠寻 纸巾 24包 家庭装",
+    "category": "家清用品",
+    "brand": "惠寻",
+    "price": 19,
+    "stock": 900
+  },
+  {
+    "product_id": "P020",
+    "name": "南极人 速干T恤 男/女款",
+    "category": "服饰",
+    "brand": "南极人",
+    "price": 39,
+    "stock": 600
+  }
+]

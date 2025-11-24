@@ -1,0 +1,6 @@
+[2025-11-21 17:16:45 +0800] [47540] [INFO] Starting gunicorn 23.0.0
+[2025-11-21 17:16:45 +0800] [47540] [INFO] Listening at: http://0.0.0.0:8080 (47540)
+[2025-11-21 17:16:45 +0800] [47540] [INFO] Using worker: gevent
+[2025-11-21 17:16:45 +0800] [47543] [INFO] Booting worker with pid: 47543
+[2025-11-21 17:22:41 +0800] [47540] [ERROR] Worker (pid:47543) was sent SIGKILL! Perhaps out of memory?
+[2025-11-21 17:22:41 +0800] [48696] [INFO] Booting worker with pid: 48696
