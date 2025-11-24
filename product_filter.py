@@ -18,15 +18,7 @@ import random
 # ======================
 
 GPT_URL = os.getenv("GPT_URL", "http://gpt-proxy.jd.com/gateway/azure/chat/completions")
-API_LIST = ["41698f72-aa72-41fc-b621-ed206141295e",
-            "0209233e-53f7-4f5b-8d56-ed1cae67e482",
-            "5380365d-902a-4567-afdb-e18afad53f72",
-            "27a53deb-689b-403b-946b-007d66c75c02",
-            "c310c351-eaff-48bd-a6bc-708077e0f254",
-            "1fe168c2-ebf2-43ca-a008-005f2f33a835",
-            "2d2856c9-d4bf-4e83-81c0-ec5dee1d35d9",
-            "bb5fcf95-3705-416e-b2b9-5a49fa3d950b",
-            "3547d05a-6c90-41c1-9aba-a26af77b5814"]   # 可填多个 API key
+API_LIST = []   # 可填多个 API key
 MODEL_NAME = "DeepSeek-V3-baidu"
 TEMPERATURE = 0.0
 RETRY_TIMES = 3
@@ -182,3 +174,4 @@ if __name__ == "__main__":
 
     result = filter_product(user, product)
     print(json.dumps(result, ensure_ascii=False, indent=2))
+
